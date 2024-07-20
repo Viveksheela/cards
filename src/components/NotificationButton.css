@@ -1,0 +1,39 @@
+.notification-button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 1em 2em;
+  transition: all 0.2s;
+  text-align: center;
+  cursor: pointer;
+  position: relative; /* Required for ::before pseudo-element */
+}
+
+.notification-button:hover {
+  border-radius: 3px;
+  border-color: red;
+}
+
+.notification-button::before {
+  content: "6"; /* Default badge content */
+  position: absolute;
+  display: flex;
+  top: -0.75em;
+  right: -0.75em;
+  height: 1.8em;
+  width: 1.8em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  z-index: 999;
+  transition: all 0.2s;
+}
+
+.notification-button:hover::before {
+  height: 2em;
+  width: 2em;
+  font-size: 1.5em;
+}
